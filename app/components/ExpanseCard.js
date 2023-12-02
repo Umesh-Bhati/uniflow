@@ -11,7 +11,7 @@ export default function ExpanseCard({ isSpent = false, progress }) {
                 <h1 className="font-semibold text-sm" >{`This week ${isSpent ? 'spent' : 'earned'}`}</h1>
                 <h1 className="text-app-blue text-sm" >€0</h1>
             </div>
-            <ProgressBar fillUpColor={!isSpent ? "green-400" : "red-500"} fullProgress={progress} />
+            <ProgressBar fillUpColor={!isSpent ? "bg-green-500" : "bg-red-500"} fullProgress={progress} />
             <div className="flex mt-2  justify-between" >
                 <div className="flex flex-row items-center" >
                     <h1 className="font-semibold text-sm mr-1" >Left</h1>

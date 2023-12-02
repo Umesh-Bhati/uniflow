@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { ExpanseCard } from './components'
 import * as Icons from './assets/icons'
-import { cardButtons, lineButtons } from './assets/dummy'
+import { accountBtns, cardButtons, lineButtons } from './assets/dummy'
 import * as Utility from './utility'
 
 
@@ -15,16 +15,12 @@ export default function Home() {
           <h1 className='text-2xl font-semibold text-app-blue mb-1' >{Utility.todayCustomFormate()}</h1>
           <p>Trial period remaining <span className='text-red-500' >21 days</span></p>
         </section>
-        <section className='flex flex-row' >
-          <button className="p-2 text-base font-semibold capitalize  rounded-xl border border-app-border " >
-            Connect bank
-          </button>
-          <button className="p-2 ml-3 text-base font-semibold capitalize  rounded-xl border border-app-border" >
-            Connect wallet
-          </button>
-          <button className="p-2 ml-3 text-base font-semibold capitalize  rounded-xl border border-app-border" >
-            Logout
-          </button>
+        <section className='flex flex-row space-x-2 ' >
+          {
+            accountBtns?.map((item, key) => <button key={item.toString()} className="p-2 text-base hover:bg-selected-btn font-semibold capitalize  rounded-xl border border-app-border " >
+              {item?.toString()}
+            </button>)
+          }
         </section>
       </div>
       <section className='flex flex-col  space-y-2  md:space-y-0 space-x-2 lg:flex-row' >
